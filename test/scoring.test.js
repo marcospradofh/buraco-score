@@ -18,6 +18,7 @@ test("não pegar o morto desconta 100", () => {
 
 test("contador de cartas usa o valor de cada carta", () => {
   assert.equal(countSum({ as: 3, dois: 1, alta: 4, baixa: 2 }), 45 + 10 + 40 + 10);
+  assert.equal(countSum({ coringa: 2, as: 1 }), 40 + 15);
 });
 
 test("partida termina quando alguém passa da meta e conta a vitória", () => {
