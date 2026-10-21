@@ -1,6 +1,16 @@
 # Placar do Buraco
 
-Micro sistema para marcar a pontuação de duas duplas no buraco. É um único arquivo, `index.html`, que funciona sem internet: abra no navegador do celular e pronto. Os dados ficam salvos no próprio aparelho (localStorage), então dá para fechar e reabrir sem perder o placar.
+Micro sistema para marcar a pontuação de duas duplas no buraco, feito em React com Vite. É um app instalável (PWA): depois do primeiro acesso com internet, abre e funciona sem sinal. Os dados ficam salvos no próprio aparelho (localStorage), então dá para fechar e reabrir sem perder o placar.
+
+## Rodar localmente
+
+```bash
+npm install
+npm run dev      # desenvolvimento
+npm test         # testes da pontuação
+npm run build    # gera a pasta dist/
+npm run preview  # serve o build, com modo offline
+```
 
 ## Como usar
 
@@ -33,18 +43,34 @@ Rodada = cartas na mesa − cartas na mão + canastras + batida − morto não p
 
 ## Hospedar na Vercel
 
-O site é estático: não tem build nem dependências. O `vercel.json` só ajusta os cabeçalhos do modo offline.
+O `vercel.json` já diz à Vercel para usar Vite, rodar `npm run build` e publicar a pasta `dist`.
 
 1. Em [vercel.com/new](https://vercel.com/new), importe o repositório `buraco-score` do GitHub.
-2. Em **Framework Preset**, deixe **Other**. Build Command e Output Directory ficam vazios.
-3. Clique em **Deploy**.
+2. Clique em **Deploy**. Não precisa mudar nenhuma configuração.
 
 A Vercel publica em produção o que está no branch `main`. Outros branches ganham um link de prévia.
 
-## Levar para o navio
+## Usar sem internet
 
-Abra o link da Vercel no celular enquanto ainda tem internet. Depois disso o app fica guardado no aparelho e abre mesmo sem sinal.
+Abra o link da Vercel no celular enquanto ainda tem internet. O selo no topo muda para **Pronto para jogar sem internet** quando o app já está guardado no aparelho. O painel **Usar sem internet** mostra o passo a passo de instalação para o navegador que está sendo usado.
 
-Dá também para instalar como app: no Android, menu do Chrome → **Adicionar à tela inicial**; no iPhone, Safari → Compartilhar → **Adicionar à Tela de Início**.
+### iPhone com Chrome
 
-Sem servidor, também dá para baixar o `index.html` e abrir direto no navegador. Nesse caso o placar funciona, mas não instala como app.
+Funciona. No iPhone, o Chrome usa o mesmo motor do Safari, que guarda sites para uso offline, e desde o iOS 16.4 o Chrome também consegue adicionar o site à Tela de Início.
+
+1. Abra o link no Chrome, com internet.
+2. Toque em **Compartilhar** (ícone ⬆ na barra de endereço, ou no menu ⋯) → **Adicionar à Tela de Início**.
+3. Abra o placar pelo novo ícone, ainda com internet, e espere o selo **Pronto para jogar sem internet**.
+
+Cuidados no iPhone:
+
+- O app da Tela de Início guarda um placar separado do que fica aberto numa aba do Chrome. Depois de instalar, marque sempre pelo ícone.
+- O iOS pode apagar dados de sites abertos só no navegador e esquecidos por alguns dias. O app instalado na Tela de Início fica protegido disso.
+
+### Android
+
+No Chrome aparece o botão **Instalar no aparelho** no painel **Usar sem internet** (ou use o menu → **Instalar app**).
+
+## Atualizações
+
+Quando houver uma versão nova publicada, o app mostra um aviso com o botão **Atualizar**. Ele nunca recarrega sozinho no meio de uma rodada, e o placar salvo continua lá depois de atualizar.
