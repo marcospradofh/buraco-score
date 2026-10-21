@@ -31,6 +31,20 @@ Quando uma dupla passa da meta, a partida termina e conta uma vitória no placar
 
 Rodada = cartas na mesa − cartas na mão + canastras + batida − morto não pego.
 
+## Hospedar na Vercel
+
+O site é estático: não tem build nem dependências. O `vercel.json` só ajusta os cabeçalhos do modo offline.
+
+1. Em [vercel.com/new](https://vercel.com/new), importe o repositório `buraco-score` do GitHub.
+2. Em **Framework Preset**, deixe **Other**. Build Command e Output Directory ficam vazios.
+3. Clique em **Deploy**.
+
+A Vercel publica em produção o que está no branch `main`. Outros branches ganham um link de prévia.
+
 ## Levar para o navio
 
-Baixe o `index.html` para o celular (ou abra pelo GitHub Pages, se ativar no repositório) antes de perder o sinal. Depois de aberto, ele não precisa de internet; só as fontes caem para a fonte padrão do sistema quando estiver offline.
+Abra o link da Vercel no celular enquanto ainda tem internet. Depois disso o app fica guardado no aparelho e abre mesmo sem sinal.
+
+Dá também para instalar como app: no Android, menu do Chrome → **Adicionar à tela inicial**; no iPhone, Safari → Compartilhar → **Adicionar à Tela de Início**.
+
+Sem servidor, também dá para baixar o `index.html` e abrir direto no navegador. Nesse caso o placar funciona, mas não instala como app.
