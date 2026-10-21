@@ -30,6 +30,7 @@ Quando uma dupla passa da meta, a partida termina e conta uma vitória no placar
 
 | Item | Pontos |
 | --- | --- |
+| Coringa (figura) | 20 |
 | Ás | 15 |
 | 2 (curinga) | 10 |
 | K, Q, J, 10, 9, 8 | 10 |

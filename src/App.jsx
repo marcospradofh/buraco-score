@@ -80,6 +80,7 @@ export default function App() {
         <summary>Valor das cartas</summary>
         <div className="panel-body">
           <dl>
+            <dt>Coringa (figura)</dt><dd>20 pontos</dd>
             <dt>Ás</dt><dd>15 pontos</dd>
             <dt>2 (curinga)</dt><dd>10 pontos</dd>
             <dt>K, Q, J, 10, 9, 8</dt><dd>10 pontos</dd>

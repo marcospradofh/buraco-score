@@ -1,4 +1,5 @@
 export const CARDS = [
+  { key: "coringa", label: "Coringa", value: 20 },
   { key: "as", label: "Ás", value: 15 },
   { key: "dois", label: "2 (curinga)", value: 10 },
   { key: "alta", label: "K a 8", value: 10 },
